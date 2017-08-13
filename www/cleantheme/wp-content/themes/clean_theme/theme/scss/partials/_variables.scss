@@ -1,0 +1,27 @@
+@import 'fonts';
+@import 'colors';
+@import 'shadows';
+
+$wrapper-padding: 30px;
+$mobile-wrapper-padding: 15px;
+
+$content-width: 1020px;
+$gap-between-rows: 30px;
+$section-top-padding: 80px;
+$section-bottom-padding: 50px;
+$mobile-section-top-padding: 50px;
+$mobile-section-bottom-padding: 50px;
+
+$application-section-top-padding: 30px;
+$application-section-bottom-padding: 60px;
+
+$big-icon-height: 103px;
+$medium-icon-height: 75px;
+$small-icon-height: 48px;
+
+$mobile-view-breaking-point: 768px;
+$desktop-view-breaking-point: 769px;
+$mobile-view-breaking-point-narrow: 440px;
+
+$modal-width: 800px;
+$modal-width-narrow: 500px;

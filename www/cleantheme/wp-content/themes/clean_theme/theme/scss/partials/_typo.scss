@@ -1,0 +1,370 @@
+/* Typography */
+
+html, body {
+  font-size: $default-font-size;
+  font-family: $font-book;
+  line-height: $heading-line-height;
+  color: $darkest-gray;
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Headings general */
+
+h1, h2, h3, h4 {
+  font-family: $heading-font;
+}
+h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
+  line-height: $heading-line-height;
+}
+
+a {
+  position: relative;
+  font-family: $font-medium;
+  color: $light-blue;
+  text-decoration: none;
+  @include box-shadow(inset 0 0 0 0 white, inset 0 -1px 0px 0px $medium-dark-gray);
+  @include transitionMultiple(color 60ms ease-in, box-shadow 60ms ease-in);
+
+  &:active, &:focus {
+    outline: rgba(0, 0, 0, 0.5) dotted 1px;
+    outline-offset: 3px;
+  }
+
+  &:hover {
+    color: $light-navy;
+    @include box-shadow(inset 0 0 0 0 white, inset 0 -1px 0px 0px $light-blue);
+  }
+
+  &.no-default {
+    @include box-shadow(none);
+
+    &:hover {
+      @include box-shadow(none);
+    }
+  }
+
+  &.contrast {
+    color: #fff;
+    @include box-shadow(inset 0 0 0 0 white, inset 0 -1px 0px 0px $lightest-blue);
+
+    &:hover {
+      color: $lightest-blue;
+      @include box-shadow(inset 0 0 0 0 white, inset 0 -1px 0px 0px #fff);
+    }
+  }
+}
+
+footer a,
+header nav a {
+  @include box-shadow(none);
+
+  &:hover {
+    @include box-shadow(none);
+  }
+}
+
+.content-typography {
+  font-size: $default-font-size;
+  line-height: $paragraph-line-height;
+
+  h2:not(:first-child), .h2:not(:first-child) {
+    padding-top: $typo-padding-top-large;
+  }
+
+  h3:not(:first-child), .h3:not(:first-child), h4:not(:first-child), .h4:not(:first-child) {
+    padding-top: $typo-padding-top;
+  }
+
+  p {
+    font-size: $default-font-size;
+    line-height: $paragraph-line-height;
+  }
+
+  * + p,
+  p + * {
+    margin-top: $paragraph-margin-bottom;
+  }
+}
+
+/* Headings (tag-specific styles) */
+h1, .h1,
+.content-typography .h1 {
+  margin-bottom: $h1-margin-bottom;
+  font-size: $h1-size;
+}
+
+h2, .h2,
+.content-typography .h2 {
+  margin-bottom: $h2-margin-bottom;
+  font-size: $h2-size;
+}
+
+h3, .h3,
+.content-typography .h3 {
+  margin-bottom: $h3-margin-bottom;
+  font-size: $h3-size;
+}
+
+h4, .h4,
+.content-typography .h4 {
+  margin-bottom: $h4-margin-bottom;
+  font-size: $h4-size;
+}
+
+h1 svg, h2 svg {
+  position: relative;
+  top: 15px;
+  height: 53px;
+  margin-right: 15px;
+
+  path {
+    fill: $navy;
+  }
+}
+
+.content-typography .small,
+.small {
+  font-size: $small-font-size;
+}
+
+.content-typography .smallest,
+.smallest {
+  font-size: $smallest-font-size;
+}
+
+/* Cases */
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.title-case {
+  text-transform: capitalize;
+}
+
+.no-case {
+  text-transform: none;
+}
+
+/* Alignments */
+
+.align-left {
+  text-align: left;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-right {
+  text-align: right;
+}
+
+/* Font styles */
+
+strong, b, .bold {
+  font-weight: bold;
+}
+
+em, .italic {
+  font-style: italic;
+}
+
+/* Hide empty typography elements to prevent ghost-margin (& padding) shifts */
+a:empty,
+h1:empty,
+h2:empty,
+h3:empty,
+h4:empty,
+h5:empty,
+h6:empty,
+p:empty {
+  display: none;
+}
+
+/* Text tones */
+
+.color-white {
+  color: #fff;
+
+  h1, h2, h3, .description, p, td, th {
+    color: #fff;
+  }
+
+  a:hover {
+    color: #fff;
+
+    &:after {
+      border-color: #fff;
+    }
+  }
+}
+
+@each $cName, $cVal in $bbColors {
+  .color-#{$cName} {
+    color: $cVal;
+
+    h1, h2, h3, .description, p, td, th {
+      color: $cVal;
+    }
+  }
+}
+
+@media (max-width: $mobile-view-breaking-point) {
+
+  /* Default heading sizes */
+
+  h1, .h1,
+  .content-typography h1,
+  .content-typography .h1 {
+    margin-bottom: $mobile-h1-margin-bottom;
+    font-size: $mobile-h1-size;
+  }
+  h2, .h2,
+  .content-typography h2,
+  .content-typography .h2 {
+    margin-bottom: $mobile-h2-margin-bottom;
+    font-size: $mobile-h2-size;
+  }
+  h3, .h3,
+  .content-typography h3,
+  .content-typography .h3 {
+    margin-bottom: $mobile-h3-margin-bottom;
+    font-size: $mobile-h3-size;
+  }
+  h4, .h4,
+  .content-typography h4,
+  .content-typography .h4 {
+    margin-bottom: $mobile-h4-margin-bottom;
+    font-size: $mobile-h4-size;
+  }
+
+  /* Mobile view specific heading sizes */
+
+  .mob-h1, .content-typography .mob-h1 {
+    margin-bottom: $mobile-h1-margin-bottom;
+    font-size: $mobile-h1-size;
+  }
+
+  .mob-h2, .content-typography .mob-h2 {
+    margin-bottom: $mobile-h2-margin-bottom;
+    font-size: $mobile-h2-size;
+  }
+
+  .mob-h3, .content-typography .mob-h3 {
+    margin-bottom: $mobile-h3-margin-bottom;
+    font-size: $mobile-h3-size;
+  }
+
+  .mob-h4, .content-typography .mob-h4 {
+    margin-bottom: $mobile-h4-margin-bottom;
+    font-size: $mobile-h4-size;
+  }
+
+  .content-typography {
+    font-size: $mobile-default-font-size;
+    line-height: $paragraph-line-height;
+
+    p + h2, p + .h2 {
+      padding-top: $typo-padding-top-large;
+    }
+
+    p + h3, p + .h3, p + h4, p + .h4 {
+      padding-top: $typo-padding-top;
+    }
+
+    p {
+      font-size: $mobile-default-font-size;
+      margin-bottom: $paragraph-margin-bottom;
+    }
+  }
+
+  /* Default text sizes */
+
+  .small,
+  .content-typography .small
+  {
+    font-size: $mobile-small-font-size;
+  }
+
+  .smallest,
+  .content-typography .smallest
+  {
+    font-size: $mobile-smallest-font-size;
+  }
+
+  /* Mobile view specific text sizes */
+
+  .mob-small, .content-typography .mob-small {
+    font-size: $mobile-small-font-size;
+  }
+
+  .mob-smallest, .content-typography .mob-smallest {
+    font-size: $mobile-smallest-font-size;
+  }
+
+  /* Mobile view specific alignments */
+
+  .mob-align-left {
+    text-align: left;
+  }
+
+  .mob-align-center {
+    text-align: center;
+  }
+
+  .mob-align-right {
+    text-align: right;
+  }
+
+  /* Mobile view specific cases */
+
+  .mob-uppercase {
+    text-transform: uppercase;
+  }
+
+  .mob-lowercase {
+    text-transform: lowercase;
+  }
+
+  .mob-title-case {
+    text-transform: capitalize;
+  }
+
+  .mob-no-case {
+    text-transform: none;
+  }
+
+  /* Mobile view specific text tones */
+
+  .mob-color-white {
+    color: #fff;
+
+    h1, h2, h3, .description, p, td, th {
+      color: #fff;
+    }
+
+    a:hover {
+      color: #fff;
+
+      &:after {
+        border-color: #fff;
+      }
+    }
+  }
+
+  @each $cName, $cVal in $bbColors {
+    .mob-color-#{$cName} {
+      color: $cVal;
+
+      h1, h2, h3, .description, p, td, th {
+        color: $cVal;
+      }
+    }
+  }
+}

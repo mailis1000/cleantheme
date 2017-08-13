@@ -1,0 +1,41 @@
+/* Quick floats */
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+/* Shadow */
+.shadow {
+  @include box-shadow($default-shadow);
+}
+
+/* Hiding */
+@mixin hide-pseudo() {
+  &::before,
+  &::after {
+    content: none !important;
+  }
+}
+
+.hidden {
+  display: none !important;
+  @include hide-pseudo();
+}
+
+@media (max-width: $mobile-view-breaking-point) {
+  .hidden-mobile {
+    display: none !important;
+    @include hide-pseudo();
+  }
+}
+
+@media (min-width: $desktop-view-breaking-point) {
+  .hidden-desktop {
+    display: none !important;
+    @include hide-pseudo();
+  }
+}

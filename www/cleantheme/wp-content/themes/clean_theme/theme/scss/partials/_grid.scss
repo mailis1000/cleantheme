@@ -1,0 +1,171 @@
+/* Grid */
+
+.wrapper {
+  width: $content-width;
+  padding: 0 $wrapper-padding;
+  margin: auto;
+
+  &.fluid {
+    width: auto;
+  }
+
+  .wrapper {
+    width: auto;
+  }
+
+  .row + .row {
+    margin-top: 30px;
+  }
+
+  .row + .no-gaps-top {
+    margin-top: 0;
+  }
+
+  .col {
+    padding: 0 15px;
+  }
+
+  &.no-gaps, .no-gaps {
+    .col {
+      padding: 0;
+    }
+  }
+
+  &.narrow, .narrow {
+    .col {
+      padding: 0 5px;
+    }
+  }
+
+  &.wide, .wide {
+    .col {
+      padding: 0 20px;
+    }
+  }
+
+  &.widest, .widest {
+    .col {
+      padding: 0 30px;
+    }
+  }
+
+  &:before, .row:before, &:after, .row:after {
+    content: " ";
+    display: table;
+  }
+
+  &:after, .row:after {
+    clear: both;
+  }
+
+  &.no-sides, .no-sides {
+    .col:first-child {
+      padding-left: 0;
+    }
+    .col:last-child {
+      padding-right: 0;
+    }
+  }
+}
+
+/* Clearfix utility class */
+
+.clearfix {
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+/* Floats */
+
+.col {
+  float: left;
+}
+
+.float-invert {
+  .col {
+    float: right;
+  }
+}
+
+.cell {
+  display: table-cell;
+}
+
+/* Column sizes */
+
+$col: 100% / 24;
+
+@for $i from 1 through 24 {
+  .col-#{$i}-24 {
+    @extend .col;
+    width: $col * $i;
+  }
+
+  .col-offset-#{$i} {
+    margin-left: $col * $i;
+  }
+}
+
+@media (max-width: $mobile-view-breaking-point) {
+  .wrapper {
+    width: 100%;
+    padding: 0 $mobile-wrapper-padding;
+
+    .col {
+      float: none;
+      width: 100%;
+    }
+
+    .col, .narrow .col, .wide .col, .widest .col {
+      padding: 0;
+    }
+
+    .col + .col {
+      margin-top: 20px;
+    }
+
+    &.no-sides, .no-sides {
+      .col:first-child {
+        padding: 0;
+      }
+      .col:last-child {
+        padding: 0;
+      }
+    }
+  }
+
+  .cell {
+    display: block;
+    width: 100% !important;
+  }
+
+  [class*='col-offset-'] {
+    margin-left: 0;
+  }
+
+  .float-invert {
+    .col {
+      float: none;
+    }
+
+    [class*='col-']:first-of-type, [class*='col-']:first-child {
+      margin-right: 0;
+    }
+
+    [class*='col-']:last-of-type, [class*='col-']:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+@media (max-width: 1020px) {
+  .wrapper {
+    width: 100%;
+  }
+}

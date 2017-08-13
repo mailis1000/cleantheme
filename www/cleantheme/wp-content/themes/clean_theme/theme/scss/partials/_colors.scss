@@ -1,0 +1,137 @@
+/**
+* Colors
+*/
+
+/* Base palette */
+$green: #3CC88C;
+$light-green: saturate(lighten($green, 8), 20%);
+$lightest-green: saturate(lighten($green, 40), 20%);
+
+$navy: #003C5A;
+$light-navy: saturate(lighten($navy, 8), 20%);
+$lightest-navy: saturate(lighten($navy, 12), 20%);
+
+$blue: #0087CA;
+$light-blue: saturate(lighten($blue, 8), 20%);
+$lightest-blue: saturate(lighten($blue, 40), 20%);
+
+$red: #FF7155;
+$light-red: saturate(lighten($red, 8), 20%);
+$lightest-red: saturate(lighten($red, 30), 20%);
+
+$yellow: #FFCC00;
+$light-yellow: saturate(lighten($yellow, 8), 20%);
+$lightest-yellow: saturate(lighten($yellow, 40), 20%);
+
+$mint: #00B9Ab;
+$light-mint: saturate(lighten($mint, 8), 20%);
+$lightest-mint: saturate(lighten($mint, 50), 20%);
+
+$darkest-gray: #4A4A4A;                         //   HEX
+$darker-gray: lighten($darkest-gray, 10);       // #646464
+$medium-dark-gray: lighten($darkest-gray, 20);  // #7D7D7D
+$dark-gray: lighten($darkest-gray, 30);         // #979797
+$gray: lighten($darkest-gray, 40);              // #B0B0B0
+$light-gray: lighten($darkest-gray, 50);        // #CACACA
+$medium-light-gray: lighten($darkest-gray, 60); // #E3E3E3
+$lighter-gray: lighten($darkest-gray, 64);      // #EDEDED
+$lightest-gray: lighten($darkest-gray, 68);     // #F7F7F7
+
+/* Color map to generate utility classes (only uses the base palette) */
+$bbColors: (
+  green: $green, light-green: $light-green, lightest-green: $lightest-green,
+  navy: $navy, light-navy: $light-navy, lightest-navy: $lightest-navy,
+  blue: $blue, light-blue: $light-blue, lightest-blue: $lightest-blue,
+  red: $red, light-red: $light-red, lightest-red: $lightest-red,
+  yellow: $yellow, light-yellow: $light-yellow, lightest-yellow: $lightest-yellow,
+  mint: $mint, light-mint: $light-mint, lightest-mint: $lightest-mint,
+  darkest-gray: $darkest-gray, darker-gray: $darker-gray, dark-gray: $dark-gray, medium-dark-gray: $medium-dark-gray,
+  gray: $gray,
+  medium-light-gray: $medium-light-gray, light-gray: $light-gray, lighter-gray: $lighter-gray, lightest-gray: $lightest-gray
+);
+
+/* Advanced palette */
+
+/* Navy */
+$light-navy-1: lighten($navy, 10);
+$light-navy-2: lighten($navy, 20);
+$light-navy-3: lighten($navy, 30);
+$light-navy-4: lighten($navy, 40);
+$light-navy-5: lighten($navy, 50);
+$light-navy-6: lighten($navy, 55);
+$dark-navy-1: darken($navy, 10);
+$dark-navy-2: darken($navy, 20);
+$dark-navy-3: darken($navy, 30);
+$dark-navy-4: darken($navy, 40);
+$dark-navy-5: darken($navy, 50);
+$dark-navy-6: darken($navy, 55);
+
+/* Green */
+$light-green-1: lighten($green, 10);
+$light-green-2: lighten($green, 20);
+$light-green-3: lighten($green, 30);
+$light-green-4: lighten($green, 40);
+$light-green-5: lighten($green, 43);
+$light-green-6: lighten($green, 46);
+$dark-green-1: darken($green, 10);
+$dark-green-2: darken($green, 20);
+$dark-green-3: darken($green, 30);
+$dark-green-4: darken($green, 40);
+$dark-green-5: darken($green, 50);
+$dark-green-6: darken($green, 55);
+
+/* Blue */
+$light-blue-1: lighten($blue, 10);
+$light-blue-2: lighten($blue, 20);
+$light-blue-3: lighten($blue, 30);
+$light-blue-4: lighten($blue, 40);
+$light-blue-5: lighten($blue, 50);
+$light-blue-6: lighten($blue, 55);
+$dark-blue-1: darken($blue, 10);
+$dark-blue-2: darken($blue, 20);
+$dark-blue-3: darken($blue, 30);
+$dark-blue-4: darken($blue, 40);
+$dark-blue-5: darken($blue, 50);
+$dark-blue-6: darken($blue, 55);
+
+/* Red */
+$light-red-1: lighten($red, 10);
+$light-red-2: lighten($red, 20);
+$light-red-3: lighten($red, 25);
+$light-red-4: lighten($red, 30);
+$light-red-5: lighten($red, 35);
+$light-red-6: lighten($red, 40);
+$dark-red-1: darken($red, 10);
+$dark-red-2: darken($red, 20);
+$dark-red-3: darken($red, 30);
+$dark-red-4: darken($red, 40);
+$dark-red-5: darken($red, 50);
+$dark-red-6: darken($red, 55);
+
+/* Mint */
+$light-mint-1: lighten($mint, 5);
+$light-mint-2: lighten($mint, 10);
+$light-mint-3: lighten($mint, 30);
+$light-mint-4: lighten($mint, 40);
+$light-mint-5: lighten($mint, 50);
+$light-mint-6: lighten($mint, 55);
+$dark-mint-1: darken($mint, 10);
+$dark-mint-2: darken($mint, 20);
+$dark-mint-3: darken($mint, 30);
+$dark-mint-4: darken($mint, 40);
+$dark-mint-5: darken($mint, 50);
+$dark-mint-6: darken($mint, 55);
+
+/* Yellow */
+$light-yellow-1: lighten($yellow, 10);
+$light-yellow-2: lighten($yellow, 20);
+$light-yellow-3: lighten($yellow, 30);
+$light-yellow-4: lighten($yellow, 40);
+$light-yellow-5: lighten($yellow, 50);
+$light-yellow-6: lighten($yellow, 55);
+$dark-yellow-1: darken($yellow, 10);
+$dark-yellow-2: darken($yellow, 20);
+$dark-yellow-3: darken($yellow, 30);
+$dark-yellow-4: darken($yellow, 40);
+$dark-yellow-5: darken($yellow, 50);
+$dark-yellow-6: darken($yellow, 55);
